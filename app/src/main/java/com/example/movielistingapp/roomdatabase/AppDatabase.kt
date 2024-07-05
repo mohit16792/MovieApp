@@ -8,7 +8,7 @@ import com.example.movielistingapp.roomdatabase.entities.CommentEntity
 import com.example.movielistingapp.roomdatabase.entities.MovieEntity
 import com.example.movielistingapp.roomdatabase.movieDao.MovieDao
 
-@Database(entities = [MovieEntity::class, CommentEntity::class], version = 1)
+@Database(entities = [MovieEntity::class, CommentEntity::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun movieDao(): MovieDao
 

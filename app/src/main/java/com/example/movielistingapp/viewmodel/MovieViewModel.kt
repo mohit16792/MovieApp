@@ -33,7 +33,7 @@ class MovieViewModel(private val repository: MovieRepository) : ViewModel() {
     val favoriteMovies: Flow<List<MovieEntity>> = repository.getFavoriteMovies()
 }
 
-class MovieViewModelFactory(private val repository: MovieRepository) : ViewModelProvider.Factory {
+class MovieViewModelFactory(val repository: MovieRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MovieViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
